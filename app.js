@@ -1,8 +1,8 @@
 // Item Model
-var Item = Backbone.Model.extend({});
+var Item = Backbone.NestedModel.extend({});
 
 // Items Collection
-var Items = Backbone.Collection.extend({});
+var Items = Backbone.NestedCollection.extend({});
 
 // App View
 var AppView = Backbone.View.extend({
