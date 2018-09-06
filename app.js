@@ -16,7 +16,6 @@ var AppView = Backbone.View.extend({
     
     onAdd: function() {
         this.items.add(new Item({content: "I am a new Item!"}));
-        this.render();
     },
 
     // It's the first function called when this view is instantiated.
@@ -28,7 +27,8 @@ var AppView = Backbone.View.extend({
         var items = new Items([item1, item2, item3]);
         this.items = items;
 
-        this.render(items);
+        this.items.on("add", _.bind(this.render, this))
+        this.render();
     },
 
     // $el - it's a cached jQuery object (el), in which you can use jQuery functions to push content.
